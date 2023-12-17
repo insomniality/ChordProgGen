@@ -18,7 +18,7 @@ std::string Chord::chordName(void)
 	else if (this->root == G) name = "G";
 	else if (this->root == G$) name = "G#";
 
-	std::cout << this->root << " " + name << std::endl;
+	// std::cout << this->root << " " + name << std::endl;
 	// if (this->chordTones[3] && this->chordTones[5])
 	// {
 		if (this->chordTones[3] == NEUTERAL)
@@ -76,11 +76,22 @@ std::string Chord::chordName(void)
 
 ///
 
-Chord::Chord() : root(C)
+static int rng()
 {
-	for (size_t i = 0; i < 4; i++)
-		this->chordTones.insert(std::pair<int, int>(1 + (i * 2), NEUTERAL));
-	std::cout << "UwU\n";
+	std::srand(std::time(nullptr) * std::rand());
+	return (std::rand() * std::rand());
+}
+
+Chord::Chord()
+{
+
+
+	this->root = rng() % 12;
+
+	this->chordTones.insert(std::pair<int, int>(1, NEUTERAL));
+	for (size_t i = 1; i < 4; i++)
+		this->chordTones.insert(std::pair<int, int>(1 + (i * 2), rng() % 3 - 1));
+	// std::cout << "UwU\n";
 }
 
 Chord::Chord(const Chord &obj)
