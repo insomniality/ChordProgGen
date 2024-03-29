@@ -5,6 +5,25 @@ std::string Chord::chordName(void)
 {
 	std::string name;
 
+	///TODO: yani inch? define-i tegh@ enum anei?
+	// enum notes
+	// {
+	// 	c,
+	// 	cs,
+	// 	d,
+	// 	ds,
+	// 	e,
+	// 	f,
+	// 	fs,
+	// 	g,
+	// 	gs,
+	// 	a,
+	// 	as,
+	// 	b
+	// };
+
+	// notes name;
+
 	if (this->root == A) name = "A";
 	else if (this->root == A$) name = "A#";
 	else if (this->root == B) name = "B";

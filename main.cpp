@@ -1,7 +1,7 @@
 #include "ProgGenerator.hpp"
 #include "Chord.hpp"
 
-//github tokken - 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
+//github tokken - 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
 
 
 int main()
